@@ -1,0 +1,20 @@
+<?php
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Species extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['name'];
+
+    public function breeds()
+    {
+        return $this->hasMany(Breed::class);
+    }
+
+    public function pets()
+    {
+        return $this->hasMany(Pet::class);
+    }
+}
